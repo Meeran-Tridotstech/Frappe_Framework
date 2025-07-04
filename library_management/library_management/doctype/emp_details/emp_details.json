@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_rhez",
+  "id",
   "first_name",
   "last_name",
   "full_name",
@@ -58,13 +59,18 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Int",
+   "label": "Id"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-01 19:54:15.479139",
+ "modified": "2025-07-03 18:21:27.890574",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Emp Details",
@@ -79,6 +85,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
    "share": 1,
    "write": 1
   }

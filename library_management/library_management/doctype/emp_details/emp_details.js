@@ -19,12 +19,13 @@
 //     }
 // });
 
+
+
 // Client Event:
 //-------------
 
-
-
 frappe.ui.form.on("Emp Details", {
+    refresh(frm){
     //When User Enter the Form Show the Message
     // setup: function(frm) {
     //     frappe.msgprint("Setup: Triggered once when form is created for the first time");
@@ -68,5 +69,72 @@ frappe.ui.form.on("Emp Details", {
     //     console.log("before_discard triggered");
     // },
     
-})
 
+    //Basic API Call Using Button:
+    //----------------------------
+    //Calling an API using Inside the Doctype CLass Using (frm.call)
+
+    // frm.add_custom_button("Button 1",()=>{
+    //     frm.call("frm_inside_the_class")
+    // })
+
+
+    // //Calling an API using Outside the Doctype CLass Using (frm.call) -Not Work
+    // frm.add_custom_button("Button 2",()=>{
+    //     frm.call("frm_outside_class")
+    // })
+
+    // // Calling an api inside the doctype class. using frappe.call
+    // frm.add_custom_button("Button 3",()=>{
+    //     frappe.call({
+    //         method:"library_management.library_management.doctype.emp_details.emp_details.btn3"
+    //     })
+    // })
+
+
+
+    // //Below FRM and FRAPPE Example Doctype
+    // frm.add_custom_button("BTN 1",()=>{
+    //     frm.call("greet")
+    // })
+
+    // frm.add_custom_button("BTN 2",()=>{
+    //     frm.call("greet")
+    //     .then(response=>{
+    //         if (response){
+    //             console.log(response)
+    //         }
+    //     })
+    // })
+
+    //EVENTS:(set_value,refersh_field)
+    //-------------------------------
+    // first_name = frm.doc.first_name
+    // console.log(first_name)
+    // frm.set_value("first_name","Meeran")
+    // frm.refresh_field("first_name") //Only UI level Changed Not change DB
+    // frm.save()
+    // console.log(first_name)
+
+    // frm.set_value({
+    //     first_name :"Meeran",
+    //     last_name : "SM",
+    //     deaprtments : "Developer",
+    // })
+
+
+    // frm.add_custom_button("Refresh",()=>{
+    // frm.refresh();
+    // frappe.msgprint("Refreshed")
+    // });
+
+
+    frm.add_custom_button("Custom Save",()=>{
+            frm.save();
+            frappe.show_alert({
+                message:('Save Button Clicked'),
+                indicator:'yellow'
+            }, 5);
+        });
+}   
+})
