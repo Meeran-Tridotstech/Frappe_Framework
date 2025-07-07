@@ -10,8 +10,13 @@
   "first_name",
   "last_name",
   "full_name",
+  "age",
+  "column_break_bfwq",
+  "location",
   "deaprtments",
   "salary",
+  "section_break_jxrh",
+  "table_lash",
   "amended_from"
  ],
  "fields": [
@@ -51,6 +56,35 @@
    "label": "Salary"
   },
   {
+   "fieldname": "id",
+   "fieldtype": "Int",
+   "label": "Id"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age"
+  },
+  {
+   "fieldname": "column_break_bfwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "section_break_jxrh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_lash",
+   "fieldtype": "Table",
+   "label": "child",
+   "options": "Child Doc"
+  },
+  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -59,18 +93,13 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
-  },
-  {
-   "fieldname": "id",
-   "fieldtype": "Int",
-   "label": "Id"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-03 18:21:27.890574",
+ "modified": "2025-07-05 20:27:00.096326",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Emp Details",
