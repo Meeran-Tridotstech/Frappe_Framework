@@ -175,3 +175,39 @@
 
 // }   
 // })
+
+//Geolocation: Select Location that address visible in Address field:
+//------------------------------------------------------------------
+frappe.ui.form.on("Emp Details", {
+    map:function(frm) {
+        // Parse GeoJSON from the 'map' field
+        const mapData = JSON.parse(frm.doc.map || '{}')?.features?.[0];
+
+        if (mapData && mapData.geometry.type === 'Point') {
+            const [lon, lat] = mapData.geometry.coordinates;
+
+            // Reverse geocoding via OpenStreetMap
+            frappe.call({
+                type: "GET",
+                url: `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+                callback(res) {
+                    if (res && res.display_name) {
+                        frm.set_value('address', res.display_name);
+                    }
+                }
+            });
+        }
+    }
+});
+
+
+frappe.ui.form.on("Emp Details", {
+    refresh(frm){
+        frm.add_custom_button("Get Route",()=>{
+            let route = frappe.get_route();
+            let emp_id = route[2]
+            console.log(route)
+        })
+
+    }
+});

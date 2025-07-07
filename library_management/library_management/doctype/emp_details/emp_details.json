@@ -10,11 +10,15 @@
   "first_name",
   "last_name",
   "full_name",
+  "column_break_anxy",
   "age",
-  "column_break_bfwq",
-  "location",
   "deaprtments",
+  "location",
   "salary",
+  "section_break_xljc",
+  "address",
+  "column_break_synx",
+  "map",
   "section_break_jxrh",
   "table_lash",
   "amended_from"
@@ -66,10 +70,6 @@
    "label": "Age"
   },
   {
-   "fieldname": "column_break_bfwq",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "location",
    "fieldtype": "Data",
    "label": "Location"
@@ -93,13 +93,36 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "column_break_anxy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_xljc",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "map",
+   "fieldtype": "Geolocation",
+   "label": "Map"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "column_break_synx",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-05 20:27:00.096326",
+ "modified": "2025-07-07 11:29:51.802495",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Emp Details",
