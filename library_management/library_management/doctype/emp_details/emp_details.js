@@ -24,8 +24,8 @@
 // Client Event:
 //-------------
 
-frappe.ui.form.on("Emp Details", {
-    refresh(frm){
+// frappe.ui.form.on("Emp Details", {
+//     refresh(frm){
     //When User Enter the Form Show the Message
     // setup: function(frm) {
     //     frappe.msgprint("Setup: Triggered once when form is created for the first time");
@@ -129,12 +129,49 @@ frappe.ui.form.on("Emp Details", {
     // });
 
 
-    frm.add_custom_button("Custom Save",()=>{
-            frm.save();
-            frappe.show_alert({
-                message:('Save Button Clicked'),
-                indicator:'yellow'
-            }, 5);
-        });
-}   
-})
+//     frm.add_custom_button("Custom Save",()=>{
+//             frm.save();
+//             frappe.show_alert({
+//                 message:('Save Button Clicked'),
+//                 indicator:'yellow'
+//             }, 5);
+//         });
+
+
+// frappe.ui.form.on("Emp Details", {
+//     refresh(frm) {
+//         frm.add_custom_button("Add Member to Child Table", () => {
+//             // Ensure all required fields are filled
+//             if (frm.doc.first_name && frm.doc.age && frm.doc.location) {
+
+//                 // Optional: Check if this entry already exists
+//                 const alreadyExists = frm.doc.child?.some(row =>
+//                     row.name === frm.doc.first_name &&
+//                     row.age === frm.doc.age &&
+//                     row.location === frm.doc.location
+//                 );
+
+//                 if (!alreadyExists) {
+//                     // Add a new row to the child table
+//                     frm.add_child("child", {
+//                         name: frm.doc.first_name,
+//                         age: frm.doc.age,
+//                         location: frm.doc.location
+//                     });
+
+//                     frm.refresh_field("child"); // Update UI
+//                     frm.dirty();                // Mark form as modified
+//                     frm.save();                 // Save the form to persist data
+//                 } else {
+//                     frappe.msgprint("This member is already added to the child table.");
+//                 }
+
+//             } else {
+//                 frappe.msgprint("Please fill in First Name, Age, and Location before adding.");
+//             }
+//         });
+//     }
+// });
+
+// }   
+// })
