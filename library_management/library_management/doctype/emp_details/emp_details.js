@@ -24,8 +24,8 @@
 // Client Event:
 //-------------
 
-// frappe.ui.form.on("Emp Details", {
-//     refresh(frm){
+frappe.ui.form.on("Emp Details", {
+    refresh(frm){
     //When User Enter the Form Show the Message
     // setup: function(frm) {
     //     frappe.msgprint("Setup: Triggered once when form is created for the first time");
@@ -74,9 +74,9 @@
     //----------------------------
     //Calling an API using Inside the Doctype CLass Using (frm.call)
 
-    // frm.add_custom_button("Button 1",()=>{
-    //     frm.call("frm_inside_the_class")
-    // })
+    frm.add_custom_button("Button 1",()=>{
+        frm.call("frm_inside_the_class")
+    })
 
 
     // //Calling an API using Outside the Doctype CLass Using (frm.call) -Not Work
@@ -170,44 +170,44 @@
 //                 frappe.msgprint("Please fill in First Name, Age, and Location before adding.");
 //             }
 //         });
-//     }
-// });
+    }
+});
 
 // }   
 // })
 
 //Geolocation: Select Location that address visible in Address field:
 //------------------------------------------------------------------
-frappe.ui.form.on("Emp Details", {
-    map:function(frm) {
-        // Parse GeoJSON from the 'map' field
-        const mapData = JSON.parse(frm.doc.map || '{}')?.features?.[0];
+// frappe.ui.form.on("Emp Details", {
+//     map:function(frm) {
+//         // Parse GeoJSON from the 'map' field
+//         const mapData = JSON.parse(frm.doc.map || '{}')?.features?.[0];
 
-        if (mapData && mapData.geometry.type === 'Point') {
-            const [lon, lat] = mapData.geometry.coordinates;
+//         if (mapData && mapData.geometry.type === 'Point') {
+//             const [lon, lat] = mapData.geometry.coordinates;
 
-            // Reverse geocoding via OpenStreetMap
-            frappe.call({
-                type: "GET",
-                url: `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
-                callback(res) {
-                    if (res && res.display_name) {
-                        frm.set_value('address', res.display_name);
-                    }
-                }
-            });
-        }
-    }
-});
+//             // Reverse geocoding via OpenStreetMap
+//             frappe.call({
+//                 type: "GET",
+//                 url: `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+//                 callback(res) {
+//                     if (res && res.display_name) {
+//                         frm.set_value('address', res.display_name);
+//                     }
+//                 }
+//             });
+//         }
+//     }
+// });
 
 
-frappe.ui.form.on("Emp Details", {
-    refresh(frm){
-        frm.add_custom_button("Get Route",()=>{
-            let route = frappe.get_route();
-            let emp_id = route[2]
-            console.log(route)
-        })
+// frappe.ui.form.on("Emp Details", {
+//     refresh(frm){
+//         frm.add_custom_button("Get Route",()=>{
+//             let route = frappe.get_route();
+//             let emp_id = route[2]
+//             console.log(route)
+//         })
 
-    }
-});
+//     }
+// });

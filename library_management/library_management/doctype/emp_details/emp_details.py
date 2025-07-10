@@ -6,7 +6,7 @@ from frappe.model.document import Document
 from frappe import _
 
 class EmpDetails(Document):
-    pass
+
     # def validate(self):
     #     try:
     #         something = self.undefined_attribute.strip()
@@ -161,27 +161,27 @@ class EmpDetails(Document):
 #----------------------------
 #Calling an API using Inside the Doctype CLass Using (frm.call)
 # API Inside the Class:
-    # @frappe.whitelist()
-    # def frm_inside_the_class(self):
-    #     frappe.msgprint("frm_inside_the_class")
-    #     return "frm_inside_class"
+    @frappe.whitelist()
+    def frm_inside_the_class(self):
+        frappe.msgprint("frm_inside_the_class")
+        return "frm_inside_class"
 
 
 #Not Work:
 #Calling an API using Inside the Doctype CLass Using (frm.call)
 # API Outside the Class:
 
-# @frappe.whitelist()
-# def frm_outside_class():
-#     frappe.msgprint("frm_outside_class")
-#     return "frm_outside_class"
+    # @frappe.whitelist()
+    # def frm_outside_class():
+    #     frappe.msgprint("frm_outside_class")
+    #     return "frm_outside_class"
 
     # @frappe.whitelist()
     # def btn3(self):
     #     frappe.msgprint("Inside class frappe.call")
     #     return "Inside class frappe.call"
 
-@frappe.whitelist()
-def btn3():
-    frappe.msgprint("Inside class frappe.call")
-    return "Inside class frappe.call"
+# @frappe.whitelist()
+# def btn3():
+#     frappe.msgprint("Inside class frappe.call")
+#     return "Inside class frappe.call"
