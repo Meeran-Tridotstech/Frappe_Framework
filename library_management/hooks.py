@@ -246,3 +246,4 @@ app_license = "mit"
 doctype_list_js = {
     "Library Member": "public/js/library_member_list.js"
 }
+
